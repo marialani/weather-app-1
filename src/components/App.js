@@ -2,6 +2,7 @@ import "../styles/App.css";
 import React from "react";
 import PropTypes from "prop-types";
 import LocationDetails from "./LocationDetails";
+import ForecastSummary from "./ForecastSummary";
 
 const App = ({ location }) => {
   const { city, country } = location;

@@ -19,6 +19,11 @@ describe("ForecastSummary", () => {
         temperature={validProps.temperature}
       />
     );
-    expect(getByText(""));
+    expect(getByText("27081988")).toHaveClass("forecast-summary_date");
+    expect(getByText("stub description")).toHaveClass(
+      "forecast-summary_description"
+    );
+    expect(getByText("stubIcon")).toHaveClass("forecast-summary_icon");
+    expect(getByText("18°C")).toHaveClass("forecast-summary_temperature");
   });
 });

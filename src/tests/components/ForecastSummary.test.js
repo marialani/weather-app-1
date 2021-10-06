@@ -11,7 +11,7 @@ describe("ForecastSummary", () => {
   };
 
   it("renders the correct date, description, temperature and icon props", () => {
-    const { getByText } = render(
+    const { getByText, asFragment } = render(
       <ForecastSummary
         date={validProps.date}
         description={validProps.description}
@@ -25,5 +25,7 @@ describe("ForecastSummary", () => {
     );
     expect(getByText("stubIcon")).toHaveClass("forecast-summary_icon");
     expect(getByText("18°C")).toHaveClass("forecast-summary_temperature");
+
+    expect(asFragment).toMatchSnapshot();
   });
 });

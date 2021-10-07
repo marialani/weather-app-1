@@ -7,9 +7,12 @@ import ForecastSummaries from "./ForecastSummaries";
 const App = ({ location, forecasts }) => {
   const { city, country } = location;
   return (
-    <div className="forecast">
-      <LocationDetails city={city} country={country} />
-      <ForecastSummaries forecasts={forecasts} />
+    <div>
+      <h1>Weather App</h1>
+      <div className="forecast">
+        <LocationDetails city={city} country={country} />
+        <ForecastSummaries forecasts={forecasts} />
+      </div>
     </div>
   );
 };

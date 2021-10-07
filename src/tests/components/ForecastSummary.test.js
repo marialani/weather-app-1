@@ -10,8 +10,20 @@ describe("ForecastSummary", () => {
     temperature: { min: 12, max: 18 },
   };
 
+  it("renders correctly", () => {
+    const { asFragment } = render(
+      <ForecastSummary
+        date={validProps.date}
+        description={validProps.description}
+        icon={validProps.icon}
+        temperature={validProps.temperature}
+      />
+    );
+    expect(asFragment).toMatchSnapshot();
+  });
+
   it("renders the correct date, description, temperature and icon props", () => {
-    const { getByText, asFragment } = render(
+    const { getByText, getByTestId } = render(
       <ForecastSummary
         date={validProps.date}
         description={validProps.description}
@@ -23,9 +35,7 @@ describe("ForecastSummary", () => {
     expect(getByText("stub description")).toHaveClass(
       "forecast-summary_description"
     );
-    expect(getByText("stubIcon")).toHaveClass("forecast-summary_icon");
+    expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary_icon");
     expect(getByText("18°C")).toHaveClass("forecast-summary_temperature");
-
-    expect(asFragment).toMatchSnapshot();
   });
 });

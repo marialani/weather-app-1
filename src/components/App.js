@@ -8,9 +8,13 @@ import ForecastDetails from "./ForecastDetails";
 const App = ({ location, forecasts }) => {
   const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
 
-  const selectedForecast = forecasts.filter(
+  const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
+
+  const handleForecastSelect = (date) => {
+    setSelectedDate(date);
+  };
 
   const { city, country } = location;
 
@@ -19,7 +23,10 @@ const App = ({ location, forecasts }) => {
       <h1>Weather App</h1>
       <div className="forecast">
         <LocationDetails city={city} country={country} />
-        <ForecastSummaries forecasts={forecasts} />
+        <ForecastSummaries
+          forecasts={forecasts}
+          onForecastSelect={handleForecastSelect}
+        />
         <ForecastDetails forecast={selectedForecast} />
       </div>
     </div>

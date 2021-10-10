@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import moment from "moment";
 import ForecastSummary from "../../components/ForecastSummary";
 
 describe("ForecastSummary", () => {
   const validProps = {
-    date: 27081988,
+    date: 3333444,
     description: "stub description",
     icon: "800",
     temperature: { min: 12, max: 18 },
@@ -31,7 +32,7 @@ describe("ForecastSummary", () => {
         temperature={validProps.temperature}
       />
     );
-    expect(getByText("27081988")).toHaveClass("forecast-summary_date");
+    expect(getByText("Thu 1st Jan")).toHaveClass("forecast-summary_date");
     expect(getByText("stub description")).toHaveClass(
       "forecast-summary_description"
     );

@@ -38,7 +38,11 @@ const App = () => {
       <h1>Weather App</h1>
       <div className="forecast">
         <LocationDetails city={city} country={country} />
-        <SearchForm searchText={searchText} setSearchText={setSearchText} />
+        <SearchForm
+          searchText={searchText}
+          setSearchText={setSearchText}
+          onSubmit={handleCitySearch}
+        />
         <ForecastSummaries
           forecasts={forecasts}
           onForecastSelect={handleForecastSelect}

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SearchForm = ({ searchText, setSearchText }) => {
+const SearchForm = ({ searchText, setSearchText, onSubmit }) => {
   const handleInputChange = (event) => {
     setSearchText(event.target.value);
   };
@@ -9,7 +9,9 @@ const SearchForm = ({ searchText, setSearchText }) => {
   return (
     <div className="search-form">
       <input type="text" value={searchText} onChange={handleInputChange} />
-      <button type="submit">Search</button>
+      <button type="submit" onClick={onSubmit}>
+        Search
+      </button>
     </div>
   );
 };
@@ -17,6 +19,7 @@ const SearchForm = ({ searchText, setSearchText }) => {
 SearchForm.propTypes = {
   searchText: PropTypes.string.isRequired,
   setSearchText: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SearchForm;

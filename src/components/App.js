@@ -15,6 +15,8 @@ const App = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const [errorMessage, setErrorMessage] = useState("error");
+
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );

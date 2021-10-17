@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/ForecastDetails.css";
 
 const ForecastDetails = ({ forecast }) => {
   const { temperature, wind, humidity } = forecast;
   return (
     <div className="forecast-details">
-      <div>{`Wind Speed: ${wind.speed} Direction: ${wind.direction}`} </div>
+      <div>{`Wind Speed: ${wind.speed}`} </div>
+      <div>{`Direction: ${wind.direction}`} </div>
       <div>{`Humidity: ${humidity}`}</div>
       <div>{`Temp: ${temperature.min} - ${temperature.max}`}</div>
     </div>

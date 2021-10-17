@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@426&display=swap");
 
+html {
+  height: 100%;
+  background: rgb(29, 237, 253);
+  background: linear-gradient(
+    0deg,
+    rgba(29, 237, 253, 1) 0%,
+    rgba(130, 69, 252, 1) 69%
+  );
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

@@ -1,16 +1,9 @@
-.search-form {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 4rem;
+.forecast-details {
+  text-align: center;
+  font-size: 30px;
 }
 
-.search-form_input {
-  margin-right: 2rem;
-  border: #000a47;
-  border-style: groove;
-}
-
-.search-form_button {
+.more-details-button {
   display: inline-block;
   outline: none;
   cursor: pointer;

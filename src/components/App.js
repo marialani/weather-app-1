@@ -30,24 +30,40 @@ const App = () => {
   };
 
   useEffect(() => {
-    getForecast(setSelectedDate, setForecasts, setLocation, searchText);
+    getForecast(
+      setSelectedDate,
+      setForecasts,
+      setLocation,
+      searchText,
+      setErrorMessage
+    );
   }, []);
 
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
       <div className="forecast">
-        <LocationDetails city={city} country={country} />
+        <LocationDetails
+          city={city}
+          country={country}
+          errorMessage={errorMessage}
+        />
         <SearchForm
           searchText={searchText}
           setSearchText={setSearchText}
           onSubmit={handleCitySearch}
         />
-        <ForecastSummaries
-          forecasts={forecasts}
-          onForecastSelect={handleForecastSelect}
-        />
-        {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
+        {!errorMessage && (
+          <>
+            <ForecastSummaries
+              forecasts={forecasts}
+              onForecastSelect={handleForecastSelect}
+            />
+            {selectedForecast && (
+              <ForecastDetails forecast={selectedForecast} />
+            )}
+          </>
+        )}
       </div>
     </div>
   );

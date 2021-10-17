@@ -9,7 +9,7 @@ const SearchForm = ({ searchText, setSearchText, onSubmit }) => {
   return (
     <div className="search-form">
       <input type="text" onChange={handleInputChange} value={searchText} />
-      <button type="submit" onClick={onSubmit}>
+      <button type="submit" onClick={onSubmit} className="search-form_button">
         Search
       </button>
     </div>

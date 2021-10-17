@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/LocationDetails.css";
 
 const LocationDetails = ({ city, country, errorMessage }) => {
   return errorMessage ? (

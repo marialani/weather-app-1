@@ -8,7 +8,9 @@ import SearchForm from "./SearchForm";
 
 const App = () => {
   const [location, setLocation] = useState({ city: "", country: "" });
+
   const { city, country } = location;
+
   const [forecasts, setForecasts] = useState([]);
 
   const [selectedDate, setSelectedDate] = useState(0);
@@ -47,7 +49,7 @@ const App = () => {
 
   return (
     <div className="weather-app">
-      <h1>Weather App</h1>
+      <h1>Weather Forecasts</h1>
       <div className="forecast">
         <LocationDetails
           city={city}

@@ -9,6 +9,7 @@ describe("ForecastSummary", () => {
     description: "stub description",
     icon: "800",
     temperature: { min: 12, max: 18 },
+    onSelect: () => {},
   };
 
   it("renders correctly", () => {
@@ -18,6 +19,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
     expect(asFragment).toMatchSnapshot();
@@ -30,6 +32,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
     expect(getByText("Thu 1st Jan")).toHaveClass("forecast-summary_date");

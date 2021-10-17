@@ -26,7 +26,13 @@ const App = () => {
   };
 
   const handleCitySearch = () => {
-    getForecast(setSelectedDate, setForecasts, setLocation, searchText);
+    getForecast(
+      setSelectedDate,
+      setForecasts,
+      setLocation,
+      searchText,
+      setErrorMessage
+    );
   };
 
   useEffect(() => {

@@ -49,6 +49,13 @@ const App = () => {
 
   return (
     <div className="weather-app">
+      <div style={{ zIndex: "-1", position: "absolute" }} id="clouds">
+        <div className="cloud x1" />
+        <div className="cloud x2" />
+        <div className="cloud x3" />
+        <div className="cloud x4" />
+        <div className="cloud x5" />
+      </div>
       <h1>Weather Forecasts</h1>
       <div className="forecast">
         <LocationDetails

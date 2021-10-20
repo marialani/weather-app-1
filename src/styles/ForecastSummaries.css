@@ -1,0 +1,6 @@
+.forecast-summaries {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem;
+  font-size: 25px;
+}
